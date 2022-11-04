@@ -8,11 +8,19 @@ generateQuote();
 quoteBtn.addEventListener('click', generateQuote);
 
 async function generateQuote() {
-  const res = await fetch('https://api.quotable.io/random');
+  const value = dropdown.options[dropdown.selectedIndex].value;
+  if (value === 'none') {
+    const res = await fetch(`https://api.quotable.io/random`);
+    const data = await res.json();
+    quoteEl.textContent = data.content;
+    speakerEl.textContent = `- ${data.author}`;
+  } else {
+    const res = await fetch(`https://api.quotable.io/random?tags=${value}`);
+    const data = await res.json();
+    quoteEl.textContent = data.content;
+    speakerEl.textContent = `- ${data.author}`;
+  }
   // Don't forget the () for the .json()- it's a method
-  const data = await res.json();
-  quoteEl.textContent = data.content;
-  speakerEl.textContent = data.author;
 }
 
 const tags = [];
