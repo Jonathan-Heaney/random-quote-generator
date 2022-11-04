@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  font-family: Raleway, sans-serif;
+  height: 100vh;
+  background-color: #a78bfa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 1080px;
+  width: 60%;
+  /* Overflow hidden fixed the border radius issue, for some reason */
+  overflow: hidden;
+  /* padding: 1rem 3rem; */
+}
+
+.quote-container {
+  padding: 1rem 2rem;
+}
+
+.quote-container h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.quote-container h4 {
+  font-weight: 400;
+}
+
+.btn-container {
+  background-color: #e5e5e5;
+  padding: 1rem 2rem;
+  display: flex;
+  /* I was dumb and tried putting justify-content on the item itself which didn't work obviously */
+  justify-content: center;
+}
+
+.btn {
+  background-color: #facc15;
+  border: 0;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+}
